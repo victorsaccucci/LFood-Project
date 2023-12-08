@@ -13,18 +13,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home page'),
+     title: Text("Home Page"),
       ),
-      bottomNavigationBar: PepperoniBottomBar
-      (
-        onIndexSelected: (index) => print(index),
-        
-        items: [
-        PepperoniBottomBarItem(icon: Icons.home, label: 'Inicio'),
-        PepperoniBottomBarItem(icon: Icons.search, label: 'Busca'),
-        PepperoniBottomBarItem(icon: Icons.file_copy_rounded, label: 'Pedidos'),
-        PepperoniBottomBarItem(icon: Icons.person, label: 'Perfil'),
-      ]),
+      body: Container(
+        color: Colors.red),
     );
   }
 }

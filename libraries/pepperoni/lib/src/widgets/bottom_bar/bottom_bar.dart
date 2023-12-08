@@ -23,7 +23,8 @@ class _PepperoniBottomBarState extends State<PepperoniBottomBar> {
         widget.items.map(
           (item) => BottomNavigationBarItem(
             icon: Icon(item.icon),
-             label: item.label
+             activeIcon: Icon(item.activeicon),
+              label: item.label
             ),
           ), 
         ),

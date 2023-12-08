@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lfood/src/features/home/view/pages/home_page.dart';
+import 'package:lfood/src/features/dashboard/views/pages/dashboard_page.dart';
 
 void main() {
   runApp(const LFoodApp());
@@ -13,10 +13,9 @@ class LFoodApp extends StatelessWidget {
     return MaterialApp(
       title: 'LFood',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+       primarySwatch: Colors.blue
       ),
-      home: const HomePage(),
+      home: const DashboardPage(),
     );
   }
 }
