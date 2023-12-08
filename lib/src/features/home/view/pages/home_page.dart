@@ -15,16 +15,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home page'),
       ),
-      bottomNavigationBar: PepperoniBottomBar( items: [
-          
-      PepperoniBottomBarItem(icon: Icons.home, label: 'Inicio'),
-      PepperoniBottomBarItem(icon: Icons.search, label: 'Busca'),
-      PepperoniBottomBarItem(icon: Icons.file_copy_rounded, label: 'Pedidos'),
-      PepperoniBottomBarItem(icon: Icons.person, label: 'Perfil'),
-
-        ]
-
-      ),
+      bottomNavigationBar: PepperoniBottomBar
+      (
+        onIndexSelected: (index) => print(index),
+        
+        items: [
+        PepperoniBottomBarItem(icon: Icons.home, label: 'Inicio'),
+        PepperoniBottomBarItem(icon: Icons.search, label: 'Busca'),
+        PepperoniBottomBarItem(icon: Icons.file_copy_rounded, label: 'Pedidos'),
+        PepperoniBottomBarItem(icon: Icons.person, label: 'Perfil'),
+      ]),
     );
   }
 }

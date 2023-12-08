@@ -4,8 +4,9 @@ import 'package:pepperoni/src/widgets/bottom_bar/pepperoni_bottom_bar_item.dart'
 class PepperoniBottomBar extends StatefulWidget {
 
   final List<PepperoniBottomBarItem> items;
+  final void Function(int index) onIndexSelected;
 
-  const PepperoniBottomBar({super.key, required this.items});
+  const PepperoniBottomBar({super.key, required this.items, required this.onIndexSelected});
 
   @override
   State<PepperoniBottomBar> createState() => _PepperoniBottomBarState();
@@ -31,6 +32,7 @@ class _PepperoniBottomBarState extends State<PepperoniBottomBar> {
       showUnselectedLabels: true,
       currentIndex: selected,
       onTap: (index){
+        widget.onIndexSelected(index);
         setState(() {
           selected = index;
         });
