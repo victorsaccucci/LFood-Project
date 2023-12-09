@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lfood/src/features/home/widgets/all_stores/all_stores_widget.dart';
+import 'package:lfood/src/features/home/widgets/drinks_store/drinks_store_widget.dart';
+import 'package:lfood/src/features/home/widgets/drugs_store/drugs_stores_widget.dart';
+import 'package:lfood/src/features/home/widgets/markets/markets_widget.dart';
+import 'package:lfood/src/features/home/widgets/pet_store/pet_store_widget.dart';
+import 'package:lfood/src/features/home/widgets/restaurants/restaurants_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,10 +14,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late final tabController = TabController(length: 5, vsync: this);
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return DefaultTabController(
       length: 6,
       child: Scaffold(
@@ -43,30 +50,20 @@ class _HomePageState extends State<HomePage>
             labelColor: Colors.red,
             indicatorColor: Colors.red,
             unselectedLabelColor: Colors.black54,
-            
           ),
         ),
         body: TabBarView(children: [
-          Container(
-            color: Colors.indigo,
-          ),
-          Container(
-            color: Colors.red,
-          ),
-          Container(
-            color: Colors.blue,
-          ),
-          Container(
-            color: Colors.yellow,
-          ),
-          Container(
-            color: Colors.green,
-          ),
-           Container(
-            color: Colors.black,
-          ),
+          AllStoresWidget(),
+          RestaurantsWidgets(),
+          MarketsWidget(),
+          DrinksStoreWidget(),
+          DrugsStoreWidget(),
+          PetStoreWidgets()
         ]),
       ),
     );
   }
+  
+@override
+bool get wantKeepAlive => true;
 }
