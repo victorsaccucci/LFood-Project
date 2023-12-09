@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
-  late final tabController = TabController(length: 5, vsync: this);
+  late final tabController = TabController(length: 6, vsync: this);
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -52,18 +52,20 @@ class _HomePageState extends State<HomePage>
             unselectedLabelColor: Colors.black54,
           ),
         ),
-        body: TabBarView(children: [
-          AllStoresWidget(),
-          RestaurantsWidgets(),
-          MarketsWidget(),
-          DrinksStoreWidget(),
-          DrugsStoreWidget(),
-          PetStoreWidgets()
+        body: TabBarView(controller: tabController, children: [
+          AllStoresWidget(
+            tabController: tabController,
+          ),
+          const RestaurantsWidgets(),
+          const MarketsWidget(),
+          const DrinksStoreWidget(),
+          const DrugsStoreWidget(),
+          const PetStoreWidgets()
         ]),
       ),
     );
   }
-  
-@override
-bool get wantKeepAlive => true;
+
+  @override
+  bool get wantKeepAlive => true;
 }

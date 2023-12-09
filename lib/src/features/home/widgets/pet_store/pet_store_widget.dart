@@ -13,7 +13,7 @@ class _PetStoreWidgets extends State<PetStoreWidgets> {
     return Container(
       color: Colors.red,
       child: Center(
-        child: Text('Restaurants store'),
+        child: Text('Pet store'),
       ),
     );
   }
