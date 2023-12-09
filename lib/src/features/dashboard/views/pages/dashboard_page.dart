@@ -47,7 +47,9 @@ class _DashboardPage extends State<DashboardPage> {
         PepperoniBottomBarItem(
           icon: Icons.file_copy_outlined,
           activeicon: Icons.file_copy_rounded,
-          label: 'Pedidos'),
+          label: 'Pedidos',
+          countBadge: 2
+          ),
 
         PepperoniBottomBarItem(
           icon: Icons.person_outlined,
