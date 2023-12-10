@@ -58,27 +58,19 @@ class _AllStoresWidgetState extends State<AllStoresWidget> {
                 widget.tabController.animateTo(5);
               },
             ),
-            CategoryListItem(
-              label: "Clube Lfood",
-              imageUrl:
-                  'https://cdn-icons-png.flaticon.com/512/2535/2535138.png',
-              onTap: (item) {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Container(color: Colors.red),
-                ));
-              },
-            ),
-            CategoryListItem(
-              label: "Feed",
-              imageUrl:
-                  'https://cdn-icons-png.flaticon.com/512/7245/7245073.png',
-              onTap: (item) {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Container(color: Colors.lightGreen),
-                ));
-              },
-            )
           ],
+        ),
+        CouponsAndNewsWidget(
+          imageList: [
+            'https://static.ifood-static.com.br/image/upload/t_high,q_100/webapp/landing/landing-banner-2.png',
+            'https://i.ytimg.com/vi/QTgEPzjqykM/maxresdefault.jpg',
+            'https://1.bp.blogspot.com/-mTwYwCRVKfM/YE-WAnvbzrI/AAAAAAAADSE/I847wTuHpCoE_FujeSX2TTJqKv6ibndogCLcBGAsYHQ/s900/Promo%25C3%25A7%25C3%25A3o-Ifood-Tudo-Por-Apenas-0%252C99.webp',
+            'https://ab697927.flyingcdn.com/wp-content/uploads/2022/03/promocao-1-ano-de-ifood.jpg',
+            'https://1.bp.blogspot.com/-W_ewK0YSBLU/Xd064tA2woI/AAAAAAAACbg/aXMKzN0U_781ECkTfFexuBsRFQqtw3YSgCLcBGAsYHQ/w1600/quarteirao-sanduiche-mc-donalds-por-1-real-promocao-esquenta.png',
+          ],
+        ),
+       AdvertisingWidget(
+        imageUrl: 'https://ab697927.flyingcdn.com/wp-content/uploads/2022/03/promocao-1-ano-de-ifood.jpg'
         ),
       ],
     );

@@ -12,13 +12,16 @@ class CategoryListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
-      child: Wrap(
-        spacing: 5,
-        runSpacing: 10,
-        children: List.from(
-          items.map(
-            (item) => _CategoryItemWidget(
-              item: item,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Wrap(
+          spacing: 5,
+          runSpacing: 10,
+          children: List.from(
+            items.map(
+              (item) => _CategoryItemWidget(
+                item: item,
+              ),
             ),
           ),
         ),
@@ -38,33 +41,44 @@ class _CategoryItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width / 4.2,
-      child: InkWell(
-        onTap: () {
-          item.onTap(item);
-        },
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            SizedBox(
-              width: 100,
-              height: 100,
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(0),
-                    child: Image.network(
-                      item.imageUrl,
-                      fit: BoxFit.cover,
+      width: MediaQuery.of(context).size.width / 5.6,
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(8),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: () {
+            item.onTap(item);
+          },
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                width: 100,
+                
+                child: AspectRatio(
+                  aspectRatio: 60 / 60,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: ColoredBox(
+                        color: Color(0xffF5F8F5),
+                        child: Image.network(
+                          item.imageUrl,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Text(item.label)
-          ],
+              Text(
+                item.label,
+                style: TextStyle(fontSize: 10),
+              )
+            ],
+          ),
         ),
       ),
     );
